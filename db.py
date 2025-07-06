@@ -1,5 +1,5 @@
 import sqlite3
-import datetime
+from datetime import datetime
 
 def get_db():
     db = sqlite3.connect("flights.db")
@@ -11,8 +11,8 @@ def create_table(db):
     cur.execute("""CREATE TABLE IF NOT EXISTS flights (
                 flight TEXT PRIMARY KEY,
                 airline TEXT,
-                from TEXT,
-                to TEXT,
+                from_ TEXT,
+                to_ TEXT,
                 scheduled_departure DATETIME,
                 scheduled_arrival DATETIME,
                 status TEXT,
@@ -22,7 +22,7 @@ def create_table(db):
 def save(db, flight, airline, from_, to, scheduled_departure, scheduled_arrival, status):
     saved_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     cur = db.cursor()
-    cur.execute("INSERT INTO flights (flight, airline, from, to, scheduled_departure, scheduled_arrival, status, saved_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+    cur.execute("INSERT INTO flights (flight, airline, from_, to_, scheduled_departure, scheduled_arrival, status, saved_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
                    (flight, airline, from_, to, scheduled_departure, scheduled_arrival, status, saved_at))
     db.commit()
 
