@@ -1,0 +1,8 @@
+sys
+questionary
+emoji
+requests
+time
+datetime
+sqlite3
+tabulate
