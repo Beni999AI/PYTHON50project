@@ -1,1 +1,23 @@
 # PYTHON50project
+
+some neat description of the whole
+
+# How it works?
+
+detailed insightful and clearly understandable, informative description which gives a throughout insight to the reader
+
+# installation
+
+Before using the app, install the required libraries:
+```shell
+pip install -r requirements.txt
+```
+
+## Usage
+
+To run the app:
+```shell
+python project.py
+```
+Follow the on-screen instructions.
+
