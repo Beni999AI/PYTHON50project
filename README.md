@@ -1,6 +1,9 @@
-# PYTHON50project
+# Aviation data and vacation planning program using API requests
 
-some neat description of the whole
+#### Video demo: .....
+
+#### Description:
+
 
 # How it works?
 
