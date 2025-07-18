@@ -2,7 +2,8 @@
 
 #### Video demo: .....
 
-#### Description: Welcome to Flight Tracker & Deal Finder! This is a powerful command-line interface (CLI) application designed for aviation enthusiasts, frequent flyers, and anyone looking for the best flight deals. It provides a simple, interactive menu to track live flights in real-time and search for affordable routes. You can also save flight information for later viewing, which is presented in a clean, tabular format.
+#### Description: 
+Welcome to Flight Tracker & Deal Finder! This is a powerful command-line interface (CLI) application designed for aviation enthusiasts, frequent flyers, and anyone looking for the best flight deals. It provides a simple, interactive menu to track live flights in real-time and search for affordable routes. You can also save flight information for later viewing, which is presented in a clean, tabular format.
 
 This tool leverages the AviationStack API for comprehensive, real-time flight data and offers a user-friendly experience powered by the questionary library.
 
@@ -34,6 +35,16 @@ Follow these instructions to get the project up and running on your local machin
 
 
 # How it works?
+
+The program operates on a continuous loop, presenting a command-line menu built with the questionary library. When a user selects an option:
+
+Flight Tracking: It prompts for a flight IATA/ICAO code. This code is then embedded into a URL for the AviationStack API. The requests library sends an HTTP GET request to this URL. The program parses the returned JSON data to extract and display live flight details like status, times, and locations.
+
+Saving Data: If the user chooses to save, the extracted flight details are passed to a save function which stores the information in a local database (managed by the functions in db.py).
+
+Viewing Data: To view saved flights, the program retrieves the data from the database and uses the tabulate library to format and print it in a clean, human-readable grid in the terminal.
+
+Essentially, it's a state-driven CLI that acts as a front-end to the AviationStack API, with added functionality for local data persistence and presentation.
 
 
 
